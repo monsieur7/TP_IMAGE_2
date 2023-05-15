@@ -36,9 +36,9 @@ def fourier2d(img,fe):
     plt.xlabel("Fx") # titre et légendes
     plt.ylabel("Fy")
     plt.title("Spectre - 2")
-"""
-N = 128
 
+N = 128
+"""
 rupt1 = np.zeros((N, N,3), dtype=np.uint8)
 rupt1 = cv.line(rupt1, (int(N/2), int(0)) , (int(N/2), int(N)), (255, 255, 255), 1)
 rupt1 = cv.cvtColor(rupt1, cv.COLOR_RGB2GRAY)
@@ -62,13 +62,16 @@ plt.title("contour diagonal")
 plt.imshow(rupt3, cmap="gray")
 
 fourier2d(rupt1, 1)
-fourier2d(rupt2, 1)
+fourier2d(rupt2, 1) 
 fourier2d(rupt3, 1)
 
 multipage('multipage.pdf')
 """
 
-path = os.path.join( os.path.join(os.getcwd(), "imagesTP"),  "Metal0007GP.png")
+#path = os.path.join( os.path.join(os.getcwd(), "imagesTP"),  "Metal0007GP.png")
+path = os.path.join( os.path.join(os.getcwd(), "imagesTP"),  "Water0000GP.png")
+#path = os.path.join( os.path.join(os.getcwd(), "imagesTP"),  "Leaves0012GP.png")
+
 print("path ", path)
 img = cv.imread(path)
 img = cv.cvtColor(img, cv.COLOR_RGB2GRAY)
